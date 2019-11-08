@@ -13,8 +13,14 @@ struct ContentView: View {
     
     var navigationButton: some View{
         HStack{
-            Button(action: { self.userData.data = load("iOS13DeveloperSeed.plist")}){
-                Text("Button")
+            Button(action: { DownlondFromUrl(url: "https://mesu.apple.com/assets/iOS13DeveloperSeed/com_apple_MobileAsset_SoftwareUpdate/com_apple_MobileAsset_SoftwareUpdate.xml") }){
+                Text("Download")
+            }
+            Button(action: {self.userData.data = load()}){
+                Text("Load")
+            }
+            Button(action: {self.userData.showSheet_1.toggle()}){
+                Text("O")
             }
         }
     }
@@ -44,6 +50,10 @@ struct ContentView: View {
                 }else{
                     Text("Click Button")
                 }
+            }
+            .sheet(isPresented: $userData.showSheet_1){
+                FileListView()
+                    .environmentObject(self.userData)
             }
             .navigationBarTitle(Text("amdUAP"), displayMode: .inline)
             .navigationBarItems(trailing: navigationButton)

@@ -15,11 +15,9 @@
 		F35C5CAF2375081B00217A1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F35C5CAD2375081B00217A1C /* LaunchScreen.storyboard */; };
 		F35C5CBA2375081B00217A1C /* amdUAPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CB92375081B00217A1C /* amdUAPTests.swift */; };
 		F35C5CC52375081B00217A1C /* amdUAPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CC42375081B00217A1C /* amdUAPUITests.swift */; };
-		F35C5CD52375087F00217A1C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CD42375087F00217A1C /* Assets.swift */; };
-		F35C5CD82375090600217A1C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35C5CD72375090600217A1C /* Alamofire.framework */; };
-		F35C5CD92375090600217A1C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F35C5CD72375090600217A1C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F35C5CE223750F0E00217A1C /* iOS13DeveloperSeed.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35C5CE123750F0E00217A1C /* iOS13DeveloperSeed.plist */; };
-		F35C5CE4237511D000217A1C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CE3237511D000217A1C /* Data.swift */; };
+		F39BD54523758317004F2450 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BD54323758317004F2450 /* Assets.swift */; };
+		F39BD54623758317004F2450 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BD54423758317004F2450 /* Data.swift */; };
+		F3FA062F237584A400370E4C /* FileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA062E237584A400370E4C /* FileListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,20 +37,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		F35C5CDA2375090600217A1C /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F35C5CD92375090600217A1C /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		F35C5C9F2375081700217A1C /* amdUAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amdUAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35C5CA22375081700217A1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,10 +53,10 @@
 		F35C5CC42375081B00217A1C /* amdUAPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amdUAPUITests.swift; sourceTree = "<group>"; };
 		F35C5CC62375081B00217A1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F35C5CD22375082600217A1C /* amdUAP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = amdUAP.entitlements; sourceTree = "<group>"; };
-		F35C5CD42375087F00217A1C /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = SOURCE_ROOT; };
 		F35C5CD72375090600217A1C /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F35C5CE123750F0E00217A1C /* iOS13DeveloperSeed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iOS13DeveloperSeed.plist; sourceTree = "<group>"; };
-		F35C5CE3237511D000217A1C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = SOURCE_ROOT; };
+		F39BD54323758317004F2450 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		F39BD54423758317004F2450 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		F3FA062E237584A400370E4C /* FileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F35C5CD82375090600217A1C /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +108,7 @@
 		F35C5CA12375081700217A1C /* amdUAP */ = {
 			isa = PBXGroup;
 			children = (
+				F3FA062B2375846E00370E4C /* Views */,
 				F35C5CE023750EE300217A1C /* Resources */,
 				F35C5CD32375085200217A1C /* Models */,
 				F35C5CD22375082600217A1C /* amdUAP.entitlements */,
@@ -168,8 +152,8 @@
 		F35C5CD32375085200217A1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F35C5CD42375087F00217A1C /* Assets.swift */,
-				F35C5CE3237511D000217A1C /* Data.swift */,
+				F39BD54323758317004F2450 /* Assets.swift */,
+				F39BD54423758317004F2450 /* Data.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,9 +169,16 @@
 		F35C5CE023750EE300217A1C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F35C5CE123750F0E00217A1C /* iOS13DeveloperSeed.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F3FA062B2375846E00370E4C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3FA062E237584A400370E4C /* FileListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +191,6 @@
 				F35C5C9B2375081700217A1C /* Sources */,
 				F35C5C9C2375081700217A1C /* Frameworks */,
 				F35C5C9D2375081700217A1C /* Resources */,
-				F35C5CDA2375090600217A1C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,7 +285,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F35C5CE223750F0E00217A1C /* iOS13DeveloperSeed.plist in Resources */,
 				F35C5CAF2375081B00217A1C /* LaunchScreen.storyboard in Resources */,
 				F35C5CAC2375081B00217A1C /* Preview Assets.xcassets in Resources */,
 				F35C5CA92375081B00217A1C /* Assets.xcassets in Resources */,
@@ -324,9 +313,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F35C5CA32375081700217A1C /* AppDelegate.swift in Sources */,
-				F35C5CE4237511D000217A1C /* Data.swift in Sources */,
+				F39BD54623758317004F2450 /* Data.swift in Sources */,
+				F3FA062F237584A400370E4C /* FileListView.swift in Sources */,
 				F35C5CA52375081700217A1C /* SceneDelegate.swift in Sources */,
-				F35C5CD52375087F00217A1C /* Assets.swift in Sources */,
+				F39BD54523758317004F2450 /* Assets.swift in Sources */,
 				F35C5CA72375081700217A1C /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
