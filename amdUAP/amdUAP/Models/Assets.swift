@@ -22,21 +22,23 @@ struct AssetsData: Codable{
     var Assets: [Key]
 }
 
-func load<T: Decodable>() -> T {
-    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("assets/assets.xml")
+let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+
+func load<T: Decodable>(url: URL) -> T {
+    
     let data: Data
     
     do {
-        data = try Data(contentsOf: path)
+        data = try Data(contentsOf: url)
     } catch {
-        fatalError("Couldn't load \(path.path): \(error)")
+        fatalError("Couldn't load \(url.path): \(error)")
     }
     
     do {
         let decoder = PropertyListDecoder()
         return try decoder.decode(T.self, from: data)
     } catch {
-        fatalError("Couldn't parse \(path.path): \(error)")
+        fatalError("Couldn't parse \(url.path): \(error)")
     }
 }
 
@@ -63,10 +65,9 @@ func directoryExists(url: URL) -> Bool{
     return !isDirectory.boolValue && exists
 }
 
-func DownlondFromUrl(url: String){ // https://stackoverflow.com/a/51442174
+func DownlondFromUrl(name: String, url: String){ // https://stackoverflow.com/a/51442174
     // Create destination URL
-    let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    let destinationFileUrl = documentsUrl.appendingPathComponent("assets/assets.xml")
+    let destinationFileUrl = documentsUrl.appendingPathComponent("assets/\(name)")
     
     //Create URL to the source file you want to download
     let fileURL = URL(string: url)

@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("assets")
+        let path = documentsUrl.appendingPathComponent("assets")
         if !directoryExists(url: path){
             try? FileManager.default.createDirectory(at: path, withIntermediateDirectories: true, attributes: nil)
         }

@@ -11,16 +11,13 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var userData: UserData
     
-    var navigationButton: some View{
+    var navigationButton_trailing: some View{
         HStack{
-            Button(action: { DownlondFromUrl(url: "https://mesu.apple.com/assets/iOS13DeveloperSeed/com_apple_MobileAsset_SoftwareUpdate/com_apple_MobileAsset_SoftwareUpdate.xml") }){
-                Text("Download")
-            }
-            Button(action: {self.userData.data = load()}){
-                Text("Load")
-            }
             Button(action: {self.userData.showSheet_1.toggle()}){
-                Text("O")
+                Image(systemName: "gear")
+            }
+            Button(action: {self.userData.showSheet_2.toggle()}){
+                Image(systemName: "list.bullet")
             }
         }
     }
@@ -43,20 +40,24 @@ struct ContentView: View {
                 if self.userData.data != nil {
                     ForEach(self.userData.data!.Assets, id: \.self){ value in
                         HStack{
+                            Image(systemName: "gear")
+                                .foregroundColor(Color.blue)
                             Text("\(value.SupportedDevices[0])_\(value.OSVersion)_\(value.Build)")
                         }
                         
                     }
-                }else{
-                    Text("Click Button")
                 }
             }
             .sheet(isPresented: $userData.showSheet_1){
+                SettingsView()
+                    .environmentObject(self.userData)
+            }
+            .sheet(isPresented: $userData.showSheet_2){
                 FileListView()
                     .environmentObject(self.userData)
             }
-            .navigationBarTitle(Text("amdUAP"), displayMode: .inline)
-            .navigationBarItems(trailing: navigationButton)
+            .navigationBarTitle(Text("Updates"), displayMode: .inline)
+            .navigationBarItems(trailing: navigationButton_trailing)
         }
     }
 }

@@ -11,4 +11,8 @@ import Foundation
 final class UserData: ObservableObject{
     @Published var data: AssetsData?
     @Published var showSheet_1 = false
+    @Published var showSheet_2 = false
+    @Published var urlRefreshMode = false
 }
+
+let assets_url = ["iOS13DeveloperSeed": "https://mesu.apple.com/assets/iOS13DeveloperSeed/com_apple_MobileAsset_SoftwareUpdate/com_apple_MobileAsset_SoftwareUpdate.xml"]
