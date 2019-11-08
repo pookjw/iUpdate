@@ -1,0 +1,663 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F35C5CA32375081700217A1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CA22375081700217A1C /* AppDelegate.swift */; };
+		F35C5CA52375081700217A1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CA42375081700217A1C /* SceneDelegate.swift */; };
+		F35C5CA72375081700217A1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CA62375081700217A1C /* ContentView.swift */; };
+		F35C5CA92375081B00217A1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F35C5CA82375081B00217A1C /* Assets.xcassets */; };
+		F35C5CAC2375081B00217A1C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F35C5CAB2375081B00217A1C /* Preview Assets.xcassets */; };
+		F35C5CAF2375081B00217A1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F35C5CAD2375081B00217A1C /* LaunchScreen.storyboard */; };
+		F35C5CBA2375081B00217A1C /* amdUAPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CB92375081B00217A1C /* amdUAPTests.swift */; };
+		F35C5CC52375081B00217A1C /* amdUAPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CC42375081B00217A1C /* amdUAPUITests.swift */; };
+		F35C5CD52375087F00217A1C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CD42375087F00217A1C /* Assets.swift */; };
+		F35C5CD82375090600217A1C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35C5CD72375090600217A1C /* Alamofire.framework */; };
+		F35C5CD92375090600217A1C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F35C5CD72375090600217A1C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F35C5CE223750F0E00217A1C /* iOS13DeveloperSeed.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35C5CE123750F0E00217A1C /* iOS13DeveloperSeed.plist */; };
+		F35C5CE4237511D000217A1C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CE3237511D000217A1C /* Data.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F35C5CB62375081B00217A1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F35C5C972375081700217A1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F35C5C9E2375081700217A1C;
+			remoteInfo = amdUAP;
+		};
+		F35C5CC12375081B00217A1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F35C5C972375081700217A1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F35C5C9E2375081700217A1C;
+			remoteInfo = amdUAP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F35C5CDA2375090600217A1C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F35C5CD92375090600217A1C /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F35C5C9F2375081700217A1C /* amdUAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amdUAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F35C5CA22375081700217A1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F35C5CA42375081700217A1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F35C5CA62375081700217A1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F35C5CA82375081B00217A1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F35C5CAB2375081B00217A1C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F35C5CAE2375081B00217A1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F35C5CB02375081B00217A1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F35C5CB52375081B00217A1C /* amdUAPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = amdUAPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F35C5CB92375081B00217A1C /* amdUAPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amdUAPTests.swift; sourceTree = "<group>"; };
+		F35C5CBB2375081B00217A1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F35C5CC02375081B00217A1C /* amdUAPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = amdUAPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F35C5CC42375081B00217A1C /* amdUAPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amdUAPUITests.swift; sourceTree = "<group>"; };
+		F35C5CC62375081B00217A1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F35C5CD22375082600217A1C /* amdUAP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = amdUAP.entitlements; sourceTree = "<group>"; };
+		F35C5CD42375087F00217A1C /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = SOURCE_ROOT; };
+		F35C5CD72375090600217A1C /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F35C5CE123750F0E00217A1C /* iOS13DeveloperSeed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iOS13DeveloperSeed.plist; sourceTree = "<group>"; };
+		F35C5CE3237511D000217A1C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F35C5C9C2375081700217A1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F35C5CD82375090600217A1C /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F35C5CB22375081B00217A1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F35C5CBD2375081B00217A1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F35C5C962375081700217A1C = {
+			isa = PBXGroup;
+			children = (
+				F35C5CA12375081700217A1C /* amdUAP */,
+				F35C5CB82375081B00217A1C /* amdUAPTests */,
+				F35C5CC32375081B00217A1C /* amdUAPUITests */,
+				F35C5CA02375081700217A1C /* Products */,
+				F35C5CD62375090600217A1C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F35C5CA02375081700217A1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F35C5C9F2375081700217A1C /* amdUAP.app */,
+				F35C5CB52375081B00217A1C /* amdUAPTests.xctest */,
+				F35C5CC02375081B00217A1C /* amdUAPUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F35C5CA12375081700217A1C /* amdUAP */ = {
+			isa = PBXGroup;
+			children = (
+				F35C5CE023750EE300217A1C /* Resources */,
+				F35C5CD32375085200217A1C /* Models */,
+				F35C5CD22375082600217A1C /* amdUAP.entitlements */,
+				F35C5CA22375081700217A1C /* AppDelegate.swift */,
+				F35C5CA42375081700217A1C /* SceneDelegate.swift */,
+				F35C5CA62375081700217A1C /* ContentView.swift */,
+				F35C5CA82375081B00217A1C /* Assets.xcassets */,
+				F35C5CAD2375081B00217A1C /* LaunchScreen.storyboard */,
+				F35C5CB02375081B00217A1C /* Info.plist */,
+				F35C5CAA2375081B00217A1C /* Preview Content */,
+			);
+			path = amdUAP;
+			sourceTree = "<group>";
+		};
+		F35C5CAA2375081B00217A1C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F35C5CAB2375081B00217A1C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F35C5CB82375081B00217A1C /* amdUAPTests */ = {
+			isa = PBXGroup;
+			children = (
+				F35C5CB92375081B00217A1C /* amdUAPTests.swift */,
+				F35C5CBB2375081B00217A1C /* Info.plist */,
+			);
+			path = amdUAPTests;
+			sourceTree = "<group>";
+		};
+		F35C5CC32375081B00217A1C /* amdUAPUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F35C5CC42375081B00217A1C /* amdUAPUITests.swift */,
+				F35C5CC62375081B00217A1C /* Info.plist */,
+			);
+			path = amdUAPUITests;
+			sourceTree = "<group>";
+		};
+		F35C5CD32375085200217A1C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F35C5CD42375087F00217A1C /* Assets.swift */,
+				F35C5CE3237511D000217A1C /* Data.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F35C5CD62375090600217A1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F35C5CD72375090600217A1C /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F35C5CE023750EE300217A1C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F35C5CE123750F0E00217A1C /* iOS13DeveloperSeed.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F35C5C9E2375081700217A1C /* amdUAP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F35C5CC92375081B00217A1C /* Build configuration list for PBXNativeTarget "amdUAP" */;
+			buildPhases = (
+				F35C5C9B2375081700217A1C /* Sources */,
+				F35C5C9C2375081700217A1C /* Frameworks */,
+				F35C5C9D2375081700217A1C /* Resources */,
+				F35C5CDA2375090600217A1C /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = amdUAP;
+			productName = amdUAP;
+			productReference = F35C5C9F2375081700217A1C /* amdUAP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F35C5CB42375081B00217A1C /* amdUAPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F35C5CCC2375081B00217A1C /* Build configuration list for PBXNativeTarget "amdUAPTests" */;
+			buildPhases = (
+				F35C5CB12375081B00217A1C /* Sources */,
+				F35C5CB22375081B00217A1C /* Frameworks */,
+				F35C5CB32375081B00217A1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F35C5CB72375081B00217A1C /* PBXTargetDependency */,
+			);
+			name = amdUAPTests;
+			productName = amdUAPTests;
+			productReference = F35C5CB52375081B00217A1C /* amdUAPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F35C5CBF2375081B00217A1C /* amdUAPUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F35C5CCF2375081B00217A1C /* Build configuration list for PBXNativeTarget "amdUAPUITests" */;
+			buildPhases = (
+				F35C5CBC2375081B00217A1C /* Sources */,
+				F35C5CBD2375081B00217A1C /* Frameworks */,
+				F35C5CBE2375081B00217A1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F35C5CC22375081B00217A1C /* PBXTargetDependency */,
+			);
+			name = amdUAPUITests;
+			productName = amdUAPUITests;
+			productReference = F35C5CC02375081B00217A1C /* amdUAPUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F35C5C972375081700217A1C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = pook;
+				TargetAttributes = {
+					F35C5C9E2375081700217A1C = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					F35C5CB42375081B00217A1C = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = F35C5C9E2375081700217A1C;
+					};
+					F35C5CBF2375081B00217A1C = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = F35C5C9E2375081700217A1C;
+					};
+				};
+			};
+			buildConfigurationList = F35C5C9A2375081700217A1C /* Build configuration list for PBXProject "amdUAP" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F35C5C962375081700217A1C;
+			productRefGroup = F35C5CA02375081700217A1C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F35C5C9E2375081700217A1C /* amdUAP */,
+				F35C5CB42375081B00217A1C /* amdUAPTests */,
+				F35C5CBF2375081B00217A1C /* amdUAPUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F35C5C9D2375081700217A1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F35C5CE223750F0E00217A1C /* iOS13DeveloperSeed.plist in Resources */,
+				F35C5CAF2375081B00217A1C /* LaunchScreen.storyboard in Resources */,
+				F35C5CAC2375081B00217A1C /* Preview Assets.xcassets in Resources */,
+				F35C5CA92375081B00217A1C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F35C5CB32375081B00217A1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F35C5CBE2375081B00217A1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F35C5C9B2375081700217A1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F35C5CA32375081700217A1C /* AppDelegate.swift in Sources */,
+				F35C5CE4237511D000217A1C /* Data.swift in Sources */,
+				F35C5CA52375081700217A1C /* SceneDelegate.swift in Sources */,
+				F35C5CD52375087F00217A1C /* Assets.swift in Sources */,
+				F35C5CA72375081700217A1C /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F35C5CB12375081B00217A1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F35C5CBA2375081B00217A1C /* amdUAPTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F35C5CBC2375081B00217A1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F35C5CC52375081B00217A1C /* amdUAPUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F35C5CB72375081B00217A1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F35C5C9E2375081700217A1C /* amdUAP */;
+			targetProxy = F35C5CB62375081B00217A1C /* PBXContainerItemProxy */;
+		};
+		F35C5CC22375081B00217A1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F35C5C9E2375081700217A1C /* amdUAP */;
+			targetProxy = F35C5CC12375081B00217A1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F35C5CAD2375081B00217A1C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F35C5CAE2375081B00217A1C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F35C5CC72375081B00217A1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F35C5CC82375081B00217A1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F35C5CCA2375081B00217A1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = amdUAP/amdUAP.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"amdUAP/Preview Content\"";
+				DEVELOPMENT_TEAM = P53D29U9LJ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = amdUAP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.amdUAP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F35C5CCB2375081B00217A1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = amdUAP/amdUAP.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"amdUAP/Preview Content\"";
+				DEVELOPMENT_TEAM = P53D29U9LJ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = amdUAP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.amdUAP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F35C5CCD2375081B00217A1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P53D29U9LJ;
+				INFOPLIST_FILE = amdUAPTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.amdUAPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amdUAP.app/amdUAP";
+			};
+			name = Debug;
+		};
+		F35C5CCE2375081B00217A1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P53D29U9LJ;
+				INFOPLIST_FILE = amdUAPTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.amdUAPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amdUAP.app/amdUAP";
+			};
+			name = Release;
+		};
+		F35C5CD02375081B00217A1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P53D29U9LJ;
+				INFOPLIST_FILE = amdUAPUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.amdUAPUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = amdUAP;
+			};
+			name = Debug;
+		};
+		F35C5CD12375081B00217A1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P53D29U9LJ;
+				INFOPLIST_FILE = amdUAPUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.amdUAPUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = amdUAP;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F35C5C9A2375081700217A1C /* Build configuration list for PBXProject "amdUAP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F35C5CC72375081B00217A1C /* Debug */,
+				F35C5CC82375081B00217A1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F35C5CC92375081B00217A1C /* Build configuration list for PBXNativeTarget "amdUAP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F35C5CCA2375081B00217A1C /* Debug */,
+				F35C5CCB2375081B00217A1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F35C5CCC2375081B00217A1C /* Build configuration list for PBXNativeTarget "amdUAPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F35C5CCD2375081B00217A1C /* Debug */,
+				F35C5CCE2375081B00217A1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F35C5CCF2375081B00217A1C /* Build configuration list for PBXNativeTarget "amdUAPUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F35C5CD02375081B00217A1C /* Debug */,
+				F35C5CD12375081B00217A1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F35C5C972375081700217A1C /* Project object */;
+}
