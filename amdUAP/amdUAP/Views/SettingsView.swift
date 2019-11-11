@@ -14,15 +14,27 @@ struct SettingsView: View {
     var navigationBarButton_trailing: some View{
         HStack{
             Button(action: {self.userData.showSheet_1.toggle()}){
-                Image(systemName: "gear")
+                Image(systemName: "xmark")
             }
         }
     }
     
     var body: some View {
         NavigationView{
-            Text("Settings")
+            List{
+                NavigationLink(destination: SelectCatalogView()){
+                    Text("Select Catalog")
+                }
+                Toggle(isOn: $userData.showDocumentationOnly){
+                    Text("Show Documentation on List")
+                }
+                Button(action: {self.userData.data = nil}){
+                    Text("Clear Loaded Data")
+                        .foregroundColor(Color.blue)
+                }
+            }
             .navigationBarItems(trailing: navigationBarButton_trailing)
+            .navigationBarTitle(Text("Settings"))
         }
     }
 }

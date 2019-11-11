@@ -22,53 +22,48 @@ struct AssetsData: Codable{
     var Assets: [Key]
 }
 
-let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
 
-func load<T: Decodable>(url: URL) -> T {
-    
+func load<T: Decodable>(url: URL) throws -> T {
     let data: Data
-    
-    do {
-        data = try Data(contentsOf: url)
-    } catch {
-        fatalError("Couldn't load \(url.path): \(error)")
-    }
-    
-    do {
-        let decoder = PropertyListDecoder()
-        return try decoder.decode(T.self, from: data)
-    } catch {
-        fatalError("Couldn't parse \(url.path): \(error)")
+    data = try Data(contentsOf: url)
+    let decoder = PropertyListDecoder()
+    return try decoder.decode(T.self, from: data)
+}
+
+enum DataType{
+    case asset, documentation
+}
+
+func getFullURL(type: DataType, name: String) -> String{
+    switch type{
+    case .asset:
+        print("https://mesu.apple.com/assets/" + name + "/com_apple_MobileAsset_SoftwareUpdate/com_apple_MobileAsset_SoftwareUpdate.xml")
+        return "https://mesu.apple.com/assets/" + name + "/com_apple_MobileAsset_SoftwareUpdate/com_apple_MobileAsset_SoftwareUpdate.xml"
+    case .documentation:
+        return "https://mesu.apple.com/assets/" + name + "/com_apple_MobileAsset_SoftwareUpdateDocumentation/com_apple_MobileAsset_SoftwareUpdateDocumentation.xml"
     }
 }
 
-func listFile() -> [URL]{
-    do{
-        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("assets")
-        let directoryContents = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil)
-        return directoryContents.filter {!$0.hasDirectoryPath}
-    }catch{
-        print(error)
-    }
-    return []
-}
 
 func fileExists(url: URL) -> Bool{
-    var isDirectory = ObjCBool(true)
-    let exists = FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory)
-    return isDirectory.boolValue && exists
-}
-
-func directoryExists(url: URL) -> Bool{
     var isDirectory = ObjCBool(true)
     let exists = FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory)
     return !isDirectory.boolValue && exists
 }
 
-func DownlondFromUrl(name: String, url: String){ // https://stackoverflow.com/a/51442174
-    // Create destination URL
-    let destinationFileUrl = documentsUrl.appendingPathComponent("assets/\(name)")
+func directoryExists(url: URL) -> Bool{
+    var isDirectory = ObjCBool(true)
+    let exists = FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory)
+    return isDirectory.boolValue && exists
+}
+
+func removeItem(url: URL) throws{
+    try FileManager.default.removeItem(at: url)
+}
     
+
+func DownlondFromUrl(destinationFileUrl : URL, url: String){ // https://stackoverflow.com/a/51442174
     //Create URL to the source file you want to download
     let fileURL = URL(string: url)
     
@@ -87,7 +82,7 @@ func DownlondFromUrl(name: String, url: String){ // https://stackoverflow.com/a/
             do {
                 try FileManager.default.copyItem(at: tempLocalUrl, to: destinationFileUrl)
             } catch (let writeError) {
-                print("Error creating a file \(destinationFileUrl) : \(writeError)")
+                print("Error creating a file \(destinationFileUrl): \(writeError)")
             }
             
         } else {

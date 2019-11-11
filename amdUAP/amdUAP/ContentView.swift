@@ -16,25 +16,50 @@ struct ContentView: View {
             Button(action: {self.userData.showSheet_1.toggle()}){
                 Image(systemName: "gear")
             }
-            Button(action: {self.userData.showSheet_2.toggle()}){
-                Image(systemName: "list.bullet")
+            Button(action: {
+                var errorOccured = false
+                self.userData.data = nil
+                do{
+                    try removeItem(url: cachesDirectory.appendingPathComponent("asset"))
+                }catch (let removeError){
+                    self.userData.showAlert_1 = true
+                    errorOccured = true
+                    self.userData.alertMessage = "Error removing a asset: \(removeError)"
+                }
+                DownlondFromUrl(destinationFileUrl: cachesDirectory.appendingPathComponent("asset"), url: getFullURL(type: .asset, name: self.userData.catalog_url[self.userData.selectedAsset]))
+                do{
+                    while true{
+                         if fileExists(url: cachesDirectory.appendingPathComponent("asset")){
+                            try self.userData.data = load(url: cachesDirectory.appendingPathComponent("asset"))
+                            break
+                        }
+                    }
+                } catch {
+                    self.userData.showAlert_1 = true
+                    errorOccured = true
+                    self.userData.alertMessage = "Error parsing a asset: \(error)"
+                }
+                if !errorOccured{
+                    self.userData.showAlert_1 = true
+                    self.userData.alertMessage = "Loaded!"
+                }
+            }){
+                Image(systemName: "arrow.clockwise")
             }
+            
         }
     }
     
+    var alert: Alert{
+        Alert(title: Text("Result"),
+              message: Text(self.userData.alertMessage),
+              dismissButton: .default(Text("Dismiss")
+            )
+        )
+    }
+    
     var body: some View {
-        /*
-        VStack{
-            Text("Hello, World!")
-            if self.userData.data != nil{
-            Text(self.userData.data!.SigningKey)
-                Text(self.userData.data!.Assets[0].Build)
-                Text(self.userData.data!.Assets[0].SupportedDeviceModels[0])
-            }
-            Button(action: { self.userData.data = load("iOS13DeveloperSeed.plist")}){
-                Text("Button")
-            }
-        }*/
+
         NavigationView{
             List{
                 if self.userData.data != nil {
@@ -52,10 +77,7 @@ struct ContentView: View {
                 SettingsView()
                     .environmentObject(self.userData)
             }
-            .sheet(isPresented: $userData.showSheet_2){
-                FileListView()
-                    .environmentObject(self.userData)
-            }
+            .alert(isPresented: $userData.showAlert_1, content: {alert})
             .navigationBarTitle(Text("Updates"), displayMode: .inline)
             .navigationBarItems(trailing: navigationButton_trailing)
         }
