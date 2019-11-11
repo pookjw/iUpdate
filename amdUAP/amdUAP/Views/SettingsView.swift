@@ -23,13 +23,23 @@ struct SettingsView: View {
         NavigationView{
             List{
                 NavigationLink(destination: SelectCatalogView()){
+                    Image(systemName: "doc.richtext")
+                        .foregroundColor(Color.blue)
+                        .frame(width: 30)
                     Text("Select Catalog")
                 }
                 Toggle(isOn: $userData.showDocumentationOnly){
+                    Image(systemName: "doc.text")
+                        .foregroundColor(Color.blue)
+                        .frame(width: 30)
                     Text("Show Documentation on List")
                 }
                 Button(action: {self.userData.data = nil}){
-                    Text("Clear Loaded Data")
+                    HStack{
+                        Image(systemName: "clear")
+                            .frame(width: 30)
+                        Text("Clear Loaded Data")
+                    }
                         .foregroundColor(Color.blue)
                 }
             }
