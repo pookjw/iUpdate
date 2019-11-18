@@ -54,6 +54,14 @@ struct DocumentationView: View {
         }
     }
     
+    var navigationBarButton_trailing: some View{
+        HStack{
+            Button(action: {self.userData.showSheet_2.toggle()}){
+                Image(systemName: "info.circle")
+            }
+        }
+    }
+    
     var description: some View{
         do{
             
@@ -85,7 +93,6 @@ struct DocumentationView: View {
         return WebView(text: "")
     }
     
-    
     var body: some View {
         VStack{
             Image("iOS13")
@@ -106,6 +113,16 @@ struct DocumentationView: View {
             Spacer()
         }
         .navigationBarTitle("Update", displayMode: .inline)
+        .navigationBarItems(trailing: navigationBarButton_trailing)
+        .sheet(isPresented: $userData.showSheet_2){
+            if self.asset_index != nil{
+                DetailView(asset_index: self.asset_index!)
+                    .environmentObject(self.userData)
+            }else{
+                DetailView(documentation_index: self.documentation_index)
+                    .environmentObject(self.userData)
+            }
+        }
     }
 }
 

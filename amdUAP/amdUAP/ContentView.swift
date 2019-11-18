@@ -91,9 +91,8 @@ struct ContentView: View {
                             NavigationLink(destination: DocumentationView(asset_index: value)){
                                 Image(systemName: "gear")
                                     .foregroundColor(Color.blue)
-                                Text("\(self.userData.asset!.Assets[value].SupportedDevices[0])_\(self.userData.asset!.Assets[value].OSVersion)_\(self.userData.asset!.Assets[value].Build) (\(self.userData.asset!.Assets[value].SUDocumentationID))")
+                                Text("\(self.userData.asset!.Assets[value].SupportedDevices[0])_\(self.userData.asset!.Assets[value].OSVersion)_\(self.userData.asset!.Assets[value].Build) (\(self.userData.asset!.Assets[value].SupportedDeviceModels[0])_\(self.userData.asset!.Assets[value].SUDocumentationID))")
                             }
-                            
                         }
                     }
                 }

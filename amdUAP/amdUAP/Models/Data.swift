@@ -13,6 +13,7 @@ final class UserData: ObservableObject{
     @Published var documentation: Documentation?
     
     @Published var showSheet_1 = false
+    @Published var showSheet_2 = false
     @Published var showAlert_1 = false
     @Published var showAlert_2 = false
     @Published var alertMessage = ""

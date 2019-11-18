@@ -12,13 +12,13 @@ struct AssetData: Codable{
     struct Key: Codable, Hashable{
         var Build: String
         var OSVersion: String
+        var PrerequisiteBuild: String?
+        var PrerequisiteOSVersion: String?
         var SUDocumentationID: String
         var SupportedDeviceModels: [String]
         var SupportedDevices: [String]
-        /*
-        var PrerequisiteBuild: String?
         var __BaseURL: String
-        var __RelativePath: String*/
+        var __RelativePath: String
     }
     var Assets: [Key]
 }
