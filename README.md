@@ -4,7 +4,7 @@ Apple Mobile Device Update Assets Parser
 
 **In Progress**
 
-![1](https://live.staticflickr.com/65535/49083911513_2f3c26cbac_o.png)
+![1](https://live.staticflickr.com/65535/49086023951_b26887fb56_o.png)
 
 ## Description
 
