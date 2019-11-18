@@ -74,10 +74,15 @@ struct ContentView: View {
         
         NavigationView{
             List{
-                if self.userData.showDocumentation {
+                if self.userData.showDocumentationOnly {
                     if self.userData.documentation != nil{
                         ForEach(0..<self.userData.documentation!.Assets.count, id: \.self){ value in
-                            Text(String("\(value) \(self.userData.documentation!.Assets[value].Device)"))
+                            //Text(String("\(value) \(self.userData.documentation!.Assets[value].Device)"))
+                            NavigationLink(destination: DocumentationView(documentation_index: value)){
+                                Image(systemName: "gear")
+                                     .foregroundColor(Color.blue)
+                                Text("\(self.userData.documentation!.Assets[value].Device)_\(self.userData.documentation!.Assets[value].OSVersion)_\(self.userData.documentation!.Assets[value].SUDocumentationID)")
+                            }
                         }
                     }
                 }else{

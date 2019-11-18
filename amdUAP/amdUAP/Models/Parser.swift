@@ -26,6 +26,7 @@ struct AssetData: Codable{
 struct Documentation: Codable{
     struct Key: Codable, Hashable{
         var Device: String
+        var OSVersion: String
         var SUDocumentationID: String
         var __BaseURL: String
         var __RelativePath: String

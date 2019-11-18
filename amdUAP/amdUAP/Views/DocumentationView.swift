@@ -15,18 +15,26 @@ struct DocumentationView: View {
     init(asset_index: Int){
         self.asset_index = asset_index
     }
+    init(documentation_index: Int){
+        self.temp = documentation_index
+    }
     
     var asset_index: Int?
+    var temp: Int?
     var documentation_index: Int {
-        var return_value = -1
-        for value in 0..<self.userData.documentation!.Assets.count{
-            //print("\(value): \(self.userData.documentation!.Assets[value].SUDocumentationID)")
-            if self.userData.documentation!.Assets[value].SUDocumentationID == self.userData.asset!.Assets[asset_index!].SUDocumentationID && self.userData.documentation!.Assets[value].Device == device {
-                return_value = value
-                break
+        if asset_index != nil{
+            var return_value = -1
+            for value in 0..<self.userData.documentation!.Assets.count{
+                //print("\(value): \(self.userData.documentation!.Assets[value].SUDocumentationID)")
+                if self.userData.documentation!.Assets[value].SUDocumentationID == self.userData.asset!.Assets[asset_index!].SUDocumentationID && self.userData.documentation!.Assets[value].Device == device {
+                    return_value = value
+                    break
+                }
             }
+            return return_value
+        }else{
+            return temp!
         }
-        return return_value
     }
     
     var device: String {

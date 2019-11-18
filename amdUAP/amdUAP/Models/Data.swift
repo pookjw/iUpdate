@@ -16,7 +16,7 @@ final class UserData: ObservableObject{
     @Published var showAlert_1 = false
     @Published var showAlert_2 = false
     @Published var alertMessage = ""
-    @Published var showDocumentation = false
+    @Published var showDocumentationOnly = false
     
     @Published var selectedAsset = 0
     @Published var catalog_url = [

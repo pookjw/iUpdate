@@ -28,7 +28,7 @@ struct SettingsView: View {
                         .frame(width: 30)
                     Text("Select Catalog")
                 }
-                Toggle(isOn: $userData.showDocumentation){
+                Toggle(isOn: $userData.showDocumentationOnly){
                     Image(systemName: "doc.text")
                         .foregroundColor(Color.blue)
                         .frame(width: 30)
