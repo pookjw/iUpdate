@@ -18,27 +18,39 @@ struct ContentView: View {
             }
             Button(action: {
                 var errorOccured = false
-                self.userData.data = nil
+                
+                self.userData.asset = nil
+                self.userData.documentation = nil
+                
                 do{
-                    try removeItem(url: cachesDirectory.appendingPathComponent("asset"))
-                }catch (let removeError){
-                    self.userData.showAlert_1 = true
-                    errorOccured = true
-                    self.userData.alertMessage = "Error removing a asset: \(removeError)"
-                }
-                DownlondFromUrl(destinationFileUrl: cachesDirectory.appendingPathComponent("asset"), url: getFullURL(type: .asset, name: self.userData.catalog_url[self.userData.selectedAsset]))
-                do{
+                    if fileExists(url: cachesDirectory.appendingPathComponent("asset.plist")){
+                        try removeItem(url: cachesDirectory.appendingPathComponent("asset.plist"))
+                    }
+                    if fileExists(url: cachesDirectory.appendingPathComponent("documentation.plist")){
+                        try removeItem(url: cachesDirectory.appendingPathComponent("documentation.plist"))
+                    }
+                    
+                    DownlondFromUrl(destinationFileUrl: cachesDirectory.appendingPathComponent("asset.plist"), url: getFullURL(type: .asset, name: self.userData.catalog_url[self.userData.selectedAsset]))
+                    DownlondFromUrl(destinationFileUrl: cachesDirectory.appendingPathComponent("documentation.plist"), url: getFullURL(type: .documentation, name: self.userData.catalog_url[self.userData.selectedAsset]))
+                    
                     while true{
-                         if fileExists(url: cachesDirectory.appendingPathComponent("asset")){
-                            try self.userData.data = load(url: cachesDirectory.appendingPathComponent("asset"))
+                        if fileExists(url: cachesDirectory.appendingPathComponent("asset.plist")){
+                            try self.userData.asset = load(url: cachesDirectory.appendingPathComponent("asset.plist"))
                             break
                         }
                     }
-                } catch {
+                    while true{
+                        if fileExists(url: cachesDirectory.appendingPathComponent("documentation.plist")){
+                            try self.userData.documentation = load(url: cachesDirectory.appendingPathComponent("documentation.plist"))
+                            break
+                        }
+                    }
+                }catch{
                     self.userData.showAlert_1 = true
                     errorOccured = true
-                    self.userData.alertMessage = "Error parsing a asset: \(error)"
+                    self.userData.alertMessage = "\(error)"
                 }
+                
                 if !errorOccured{
                     self.userData.showAlert_1 = true
                     self.userData.alertMessage = "Loaded!"
@@ -59,17 +71,25 @@ struct ContentView: View {
     }
     
     var body: some View {
-
+        
         NavigationView{
             List{
-                if self.userData.data != nil {
-                    ForEach(self.userData.data!.Assets, id: \.self){ value in
-                        HStack{
-                            Image(systemName: "gear")
-                                .foregroundColor(Color.blue)
-                            Text("\(value.SupportedDevices[0])_\(value.OSVersion)_\(value.Build)")
+                if self.userData.showDocumentation {
+                    if self.userData.documentation != nil{
+                        ForEach(0..<self.userData.documentation!.Assets.count, id: \.self){ value in
+                            Text(String("\(value) \(self.userData.documentation!.Assets[value].Device)"))
                         }
-                        
+                    }
+                }else{
+                    if self.userData.asset != nil {
+                        ForEach(0..<self.userData.asset!.Assets.count, id: \.self){ value in
+                            NavigationLink(destination: DocumentationView(asset_index: value)){
+                                Image(systemName: "gear")
+                                    .foregroundColor(Color.blue)
+                                Text("\(self.userData.asset!.Assets[value].SupportedDevices[0])_\(self.userData.asset!.Assets[value].OSVersion)_\(self.userData.asset!.Assets[value].Build) (\(self.userData.asset!.Assets[value].SUDocumentationID))")
+                            }
+                            
+                        }
                     }
                 }
             }
@@ -78,7 +98,7 @@ struct ContentView: View {
                     .environmentObject(self.userData)
             }
             .alert(isPresented: $userData.showAlert_1, content: {alert})
-            .navigationBarTitle(Text("Updates"), displayMode: .inline)
+            .navigationBarTitle("Assets")
             .navigationBarItems(trailing: navigationButton_trailing)
         }
     }

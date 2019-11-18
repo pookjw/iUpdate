@@ -15,7 +15,11 @@
 		F35C5CAF2375081B00217A1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F35C5CAD2375081B00217A1C /* LaunchScreen.storyboard */; };
 		F35C5CBA2375081B00217A1C /* amdUAPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CB92375081B00217A1C /* amdUAPTests.swift */; };
 		F35C5CC52375081B00217A1C /* amdUAPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CC42375081B00217A1C /* amdUAPUITests.swift */; };
-		F39BD54523758317004F2450 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BD54323758317004F2450 /* Assets.swift */; };
+		F35E925D2382645200A8EFEE /* DocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35E925C2382645200A8EFEE /* DocumentationView.swift */; };
+		F365B6B12382BA1300B3CE51 /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35E92712382A44F00A8EFEE /* ZipArchive.framework */; };
+		F365B6B22382BA1300B3CE51 /* ZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F35E92712382A44F00A8EFEE /* ZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F365B6B92382C15600B3CE51 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365B6B82382C15600B3CE51 /* WebView.swift */; };
+		F39BD54523758317004F2450 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BD54323758317004F2450 /* Parser.swift */; };
 		F39BD54623758317004F2450 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BD54423758317004F2450 /* Data.swift */; };
 		F3FA06312375912400370E4C /* SelectCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA06302375912400370E4C /* SelectCatalogView.swift */; };
 		F3FA06332375A28200370E4C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA06322375A28200370E4C /* SettingsView.swift */; };
@@ -38,6 +42,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F365B6B32382BA1400B3CE51 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F365B6B22382BA1300B3CE51 /* ZipArchive.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F35C5C9F2375081700217A1C /* amdUAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amdUAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35C5CA22375081700217A1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +73,10 @@
 		F35C5CC62375081B00217A1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F35C5CD22375082600217A1C /* amdUAP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = amdUAP.entitlements; sourceTree = "<group>"; };
 		F35C5CD72375090600217A1C /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F39BD54323758317004F2450 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		F35E925C2382645200A8EFEE /* DocumentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationView.swift; sourceTree = "<group>"; };
+		F35E92712382A44F00A8EFEE /* ZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F365B6B82382C15600B3CE51 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		F39BD54323758317004F2450 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		F39BD54423758317004F2450 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F3FA06302375912400370E4C /* SelectCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCatalogView.swift; sourceTree = "<group>"; };
 		F3FA06322375A28200370E4C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -66,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F365B6B12382BA1300B3CE51 /* ZipArchive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +176,7 @@
 		F35C5CD32375085200217A1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F39BD54323758317004F2450 /* Assets.swift */,
+				F39BD54323758317004F2450 /* Parser.swift */,
 				F39BD54423758317004F2450 /* Data.swift */,
 			);
 			path = Models;
@@ -163,6 +185,7 @@
 		F35C5CD62375090600217A1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F35E92712382A44F00A8EFEE /* ZipArchive.framework */,
 				F35C5CD72375090600217A1C /* Alamofire.framework */,
 			);
 			name = Frameworks;
@@ -180,6 +203,8 @@
 			children = (
 				F3FA06302375912400370E4C /* SelectCatalogView.swift */,
 				F3FA06322375A28200370E4C /* SettingsView.swift */,
+				F35E925C2382645200A8EFEE /* DocumentationView.swift */,
+				F365B6B82382C15600B3CE51 /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,6 +219,7 @@
 				F35C5C9B2375081700217A1C /* Sources */,
 				F35C5C9C2375081700217A1C /* Frameworks */,
 				F35C5C9D2375081700217A1C /* Resources */,
+				F365B6B32382BA1400B3CE51 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,8 +346,10 @@
 				F39BD54623758317004F2450 /* Data.swift in Sources */,
 				F35C5CA52375081700217A1C /* SceneDelegate.swift in Sources */,
 				F3FA06312375912400370E4C /* SelectCatalogView.swift in Sources */,
-				F39BD54523758317004F2450 /* Assets.swift in Sources */,
+				F39BD54523758317004F2450 /* Parser.swift in Sources */,
+				F365B6B92382C15600B3CE51 /* WebView.swift in Sources */,
 				F35C5CA72375081700217A1C /* ContentView.swift in Sources */,
+				F35E925D2382645200A8EFEE /* DocumentationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

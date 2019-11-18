@@ -28,23 +28,25 @@ struct SettingsView: View {
                         .frame(width: 30)
                     Text("Select Catalog")
                 }
-                Toggle(isOn: $userData.showDocumentationOnly){
+                Toggle(isOn: $userData.showDocumentation){
                     Image(systemName: "doc.text")
                         .foregroundColor(Color.blue)
                         .frame(width: 30)
                     Text("Show Documentation on List")
                 }
-                Button(action: {self.userData.data = nil}){
+                /*
+                Button(action: {self.userData.asset = nil}){
                     HStack{
                         Image(systemName: "clear")
                             .frame(width: 30)
                         Text("Clear Loaded Data")
                     }
                         .foregroundColor(Color.blue)
-                }
+                }*/
+                Text(cachesDirectory.path)
             }
             .navigationBarItems(trailing: navigationBarButton_trailing)
-            .navigationBarTitle(Text("Settings"))
+            .navigationBarTitle("Settings")
         }
     }
 }

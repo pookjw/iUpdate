@@ -1,5 +1,5 @@
 //
-//  Assets.swift
+//  Parser.swift
 //  amdUAP
 //
 //  Created by pook on 11/8/19.
@@ -8,10 +8,11 @@
 
 import Foundation
 
-struct AssetsData: Codable{
+struct AssetData: Codable{
     struct Key: Codable, Hashable{
         var Build: String
         var OSVersion: String
+        var SUDocumentationID: String
         var SupportedDeviceModels: [String]
         var SupportedDevices: [String]
         /*
@@ -19,6 +20,17 @@ struct AssetsData: Codable{
         var __BaseURL: String
         var __RelativePath: String*/
     }
+    var Assets: [Key]
+}
+
+struct Documentation: Codable{
+    struct Key: Codable, Hashable{
+        var Device: String
+        var SUDocumentationID: String
+        var __BaseURL: String
+        var __RelativePath: String
+    }
+    
     var Assets: [Key]
 }
 
@@ -61,7 +73,10 @@ func directoryExists(url: URL) -> Bool{
 func removeItem(url: URL) throws{
     try FileManager.default.removeItem(at: url)
 }
-    
+
+func createDirectory(url: URL) throws{
+    try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+}
 
 func DownlondFromUrl(destinationFileUrl : URL, url: String){ // https://stackoverflow.com/a/51442174
     //Create URL to the source file you want to download
