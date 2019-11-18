@@ -71,7 +71,7 @@ struct DetailView: View {
                         HStack{
                             Text(value)
                             Spacer()
-                            if value == nil {
+                            if self.dict[value]! == nil {
                                 Text("nil")
                                     .foregroundColor(Color.gray)
                             } else {
