@@ -4,7 +4,7 @@ Apple Mobile Device Update Assets Parser
 
 **In Progress**
 
-![1](https://live.staticflickr.com/65535/49086023951_b26887fb56_o.png)
+![1](https://live.staticflickr.com/65535/49089108957_986ff06c78_o.png)
 
 ## Description
 
@@ -18,6 +18,4 @@ Apple Mobile Device Update Assets Parser
 
 ## Image Sources
 
-iOS 13 wallpaper from Apple
-
-iOS Settings icon from https://www.deviantart.com/pgbiel/art/Round-iOS-7-Settings-icon-498752887
+iOS image from Apple

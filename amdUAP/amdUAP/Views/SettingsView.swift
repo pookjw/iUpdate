@@ -14,6 +14,8 @@ struct SettingsView: View {
     var navigationBarButton_trailing: some View{
         HStack{
             Button(action: {self.userData.showSheet_1.toggle()}){
+                Spacer()
+                    .frame(width: 50)
                 Image(systemName: "xmark")
             }
         }
@@ -33,6 +35,12 @@ struct SettingsView: View {
                         .foregroundColor(Color.blue)
                         .frame(width: 30)
                     Text("Show Documentation on List")
+                }
+                Toggle(isOn: $userData.disableDescription){
+                    Image(systemName: "doc")
+                        .foregroundColor(Color.blue)
+                        .frame(width: 30)
+                    Text("Disable Description")
                 }
                 Text(cachesDirectory.path)
             }

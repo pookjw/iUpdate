@@ -16,6 +16,8 @@ struct DetailView: View {
     var navigationBarButton_trailing: some View{
         HStack{
             Button(action: {self.userData.showSheet_2.toggle()}){
+                Spacer()
+                    .frame(width: 50)
                 Image(systemName: "xmark")
             }
         }

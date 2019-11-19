@@ -57,6 +57,8 @@ struct DocumentationView: View {
     var navigationBarButton_trailing: some View{
         HStack{
             Button(action: {self.userData.showSheet_2.toggle()}){
+                Spacer()
+                    .frame(width: 50)
                 Image(systemName: "info.circle")
             }
         }
@@ -101,6 +103,8 @@ struct DocumentationView: View {
             Image("Settings")
                 .resizable()
                 .frame(width: 150, height: 150)
+                .clipShape(Circle())
+                .shadow(radius: 15)
                 .padding(.bottom, -75)
                 .offset(y: -75)
             Text(self.userData.documentation!.Assets[documentation_index].SUDocumentationID)
@@ -108,7 +112,9 @@ struct DocumentationView: View {
                 .fontWeight(.heavy)
                 .multilineTextAlignment(.center)
             
-            description
+            if !self.userData.disableDescription{
+                description
+            }
             
             Spacer()
         }

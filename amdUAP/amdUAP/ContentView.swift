@@ -14,8 +14,12 @@ struct ContentView: View {
     var navigationButton_trailing: some View{
         HStack{
             Button(action: {self.userData.showSheet_1.toggle()}){
+                Spacer()
+                    .frame(width: 50)
                 Image(systemName: "gear")
             }
+            Spacer()
+                .frame(width: 10)
             Button(action: {
                 var errorOccured = false
                 
@@ -56,9 +60,12 @@ struct ContentView: View {
                     self.userData.alertMessage = "Loaded!"
                 }
             }){
-                Image(systemName: "arrow.clockwise")
+                if self.userData.asset == nil && self.userData.documentation == nil {
+                    Image(systemName: "icloud.and.arrow.down")
+                } else {
+                    Image(systemName: "arrow.clockwise")
+                }
             }
-            
         }
     }
     
