@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1195B11E7BD0B9E0239CED3E /* libPods-amdUAP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A54B1D75171B41958304BD /* libPods-amdUAP.a */; };
+		20D97B7EA74617DFD78B4683 /* libPods-amdUAP-amdUAPUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3309E57869DDB3E00CAA20E7 /* libPods-amdUAP-amdUAPUITests.a */; };
+		E3348CD5E8907D2D61D7CCDB /* libPods-amdUAPTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA1AB49DE16F5CA34D32F4E /* libPods-amdUAPTests.a */; };
 		F35C5CA32375081700217A1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CA22375081700217A1C /* AppDelegate.swift */; };
 		F35C5CA52375081700217A1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CA42375081700217A1C /* SceneDelegate.swift */; };
 		F35C5CA72375081700217A1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CA62375081700217A1C /* ContentView.swift */; };
@@ -16,8 +19,6 @@
 		F35C5CBA2375081B00217A1C /* amdUAPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CB92375081B00217A1C /* amdUAPTests.swift */; };
 		F35C5CC52375081B00217A1C /* amdUAPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C5CC42375081B00217A1C /* amdUAPUITests.swift */; };
 		F35E925D2382645200A8EFEE /* DocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35E925C2382645200A8EFEE /* DocumentationView.swift */; };
-		F365B6B12382BA1300B3CE51 /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35E92712382A44F00A8EFEE /* ZipArchive.framework */; };
-		F365B6B22382BA1300B3CE51 /* ZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F35E92712382A44F00A8EFEE /* ZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F365B6B92382C15600B3CE51 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365B6B82382C15600B3CE51 /* WebView.swift */; };
 		F365B6BB238309DF00B3CE51 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365B6BA238309DF00B3CE51 /* DetailView.swift */; };
 		F39BD54523758317004F2450 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BD54323758317004F2450 /* Parser.swift */; };
@@ -43,21 +44,15 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		F365B6B32382BA1400B3CE51 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F365B6B22382BA1300B3CE51 /* ZipArchive.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		1FA1AB49DE16F5CA34D32F4E /* libPods-amdUAPTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-amdUAPTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3309E57869DDB3E00CAA20E7 /* libPods-amdUAP-amdUAPUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-amdUAP-amdUAPUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A4D85533241BB7C0B9EA2C5 /* Pods-amdUAPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amdUAPTests.release.xcconfig"; path = "Target Support Files/Pods-amdUAPTests/Pods-amdUAPTests.release.xcconfig"; sourceTree = "<group>"; };
+		5B52E8FDC1D188631EC0E7F1 /* Pods-amdUAP-amdUAPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amdUAP-amdUAPUITests.release.xcconfig"; path = "Target Support Files/Pods-amdUAP-amdUAPUITests/Pods-amdUAP-amdUAPUITests.release.xcconfig"; sourceTree = "<group>"; };
+		64A54B1D75171B41958304BD /* libPods-amdUAP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-amdUAP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CBA0F2D5B286C3293E27E70 /* Pods-amdUAPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amdUAPTests.debug.xcconfig"; path = "Target Support Files/Pods-amdUAPTests/Pods-amdUAPTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AFA6A56DB6E4A5D0B3C8E185 /* Pods-amdUAP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amdUAP.release.xcconfig"; path = "Target Support Files/Pods-amdUAP/Pods-amdUAP.release.xcconfig"; sourceTree = "<group>"; };
+		E376E7143F94F2603B72D543 /* Pods-amdUAP-amdUAPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amdUAP-amdUAPUITests.debug.xcconfig"; path = "Target Support Files/Pods-amdUAP-amdUAPUITests/Pods-amdUAP-amdUAPUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F35C5C9F2375081700217A1C /* amdUAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amdUAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35C5CA22375081700217A1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F35C5CA42375081700217A1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +77,7 @@
 		F39BD54423758317004F2450 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F3FA06302375912400370E4C /* SelectCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCatalogView.swift; sourceTree = "<group>"; };
 		F3FA06322375A28200370E4C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F4908EEC7559437FCB1DBF48 /* Pods-amdUAP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amdUAP.debug.xcconfig"; path = "Target Support Files/Pods-amdUAP/Pods-amdUAP.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F365B6B12382BA1300B3CE51 /* ZipArchive.framework in Frameworks */,
+				1195B11E7BD0B9E0239CED3E /* libPods-amdUAP.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3348CD5E8907D2D61D7CCDB /* libPods-amdUAPTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,12 +101,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20D97B7EA74617DFD78B4683 /* libPods-amdUAP-amdUAPUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A40A9750561085A39F898B80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4908EEC7559437FCB1DBF48 /* Pods-amdUAP.debug.xcconfig */,
+				AFA6A56DB6E4A5D0B3C8E185 /* Pods-amdUAP.release.xcconfig */,
+				E376E7143F94F2603B72D543 /* Pods-amdUAP-amdUAPUITests.debug.xcconfig */,
+				5B52E8FDC1D188631EC0E7F1 /* Pods-amdUAP-amdUAPUITests.release.xcconfig */,
+				7CBA0F2D5B286C3293E27E70 /* Pods-amdUAPTests.debug.xcconfig */,
+				3A4D85533241BB7C0B9EA2C5 /* Pods-amdUAPTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F35C5C962375081700217A1C = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +129,7 @@
 				F35C5CC32375081B00217A1C /* amdUAPUITests */,
 				F35C5CA02375081700217A1C /* Products */,
 				F35C5CD62375090600217A1C /* Frameworks */,
+				A40A9750561085A39F898B80 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,6 +201,9 @@
 			children = (
 				F35E92712382A44F00A8EFEE /* ZipArchive.framework */,
 				F35C5CD72375090600217A1C /* Alamofire.framework */,
+				64A54B1D75171B41958304BD /* libPods-amdUAP.a */,
+				3309E57869DDB3E00CAA20E7 /* libPods-amdUAP-amdUAPUITests.a */,
+				1FA1AB49DE16F5CA34D32F4E /* libPods-amdUAPTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,10 +234,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F35C5CC92375081B00217A1C /* Build configuration list for PBXNativeTarget "amdUAP" */;
 			buildPhases = (
+				5606958FA7526C540EBAA8BF /* [CP] Check Pods Manifest.lock */,
 				F35C5C9B2375081700217A1C /* Sources */,
 				F35C5C9C2375081700217A1C /* Frameworks */,
 				F35C5C9D2375081700217A1C /* Resources */,
-				F365B6B32382BA1400B3CE51 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,6 +252,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F35C5CCC2375081B00217A1C /* Build configuration list for PBXNativeTarget "amdUAPTests" */;
 			buildPhases = (
+				E8D7DC306F5909963C36F004 /* [CP] Check Pods Manifest.lock */,
 				F35C5CB12375081B00217A1C /* Sources */,
 				F35C5CB22375081B00217A1C /* Frameworks */,
 				F35C5CB32375081B00217A1C /* Resources */,
@@ -255,6 +271,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F35C5CCF2375081B00217A1C /* Build configuration list for PBXNativeTarget "amdUAPUITests" */;
 			buildPhases = (
+				C3A7B51636EBABD143CBCC19 /* [CP] Check Pods Manifest.lock */,
 				F35C5CBC2375081B00217A1C /* Sources */,
 				F35C5CBD2375081B00217A1C /* Frameworks */,
 				F35C5CBE2375081B00217A1C /* Resources */,
@@ -338,6 +355,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5606958FA7526C540EBAA8BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-amdUAP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3A7B51636EBABD143CBCC19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-amdUAP-amdUAPUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8D7DC306F5909963C36F004 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-amdUAPTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F35C5C9B2375081700217A1C /* Sources */ = {
@@ -516,6 +602,7 @@
 		};
 		F35C5CCA2375081B00217A1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4908EEC7559437FCB1DBF48 /* Pods-amdUAP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = amdUAP/amdUAP.entitlements;
@@ -539,6 +626,7 @@
 		};
 		F35C5CCB2375081B00217A1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFA6A56DB6E4A5D0B3C8E185 /* Pods-amdUAP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = amdUAP/amdUAP.entitlements;
@@ -562,6 +650,7 @@
 		};
 		F35C5CCD2375081B00217A1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CBA0F2D5B286C3293E27E70 /* Pods-amdUAPTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -584,6 +673,7 @@
 		};
 		F35C5CCE2375081B00217A1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A4D85533241BB7C0B9EA2C5 /* Pods-amdUAPTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -606,6 +696,7 @@
 		};
 		F35C5CD02375081B00217A1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E376E7143F94F2603B72D543 /* Pods-amdUAP-amdUAPUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -626,6 +717,7 @@
 		};
 		F35C5CD12375081B00217A1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B52E8FDC1D188631EC0E7F1 /* Pods-amdUAP-amdUAPUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

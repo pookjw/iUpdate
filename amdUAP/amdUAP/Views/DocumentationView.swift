@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import ZipArchive
+import SSZipArchive
 
 struct DocumentationView: View {
     @EnvironmentObject var userData: UserData
