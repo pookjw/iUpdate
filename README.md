@@ -1,17 +1,17 @@
-# amdUAP
+# iUpdate
 
 Apple Mobile Device Update Assets Parser
 
 **In Progress**
 
-![1](https://live.staticflickr.com/65535/49089108957_986ff06c78_o.png)
+## Screenshots
 
-## Description
+![0](images/0.png)
 
-- Only supports iOS 13 Assets (iOS13DeveloperSeed, iOS13PublicSeed) yet
+![1](images/1.png)
 
-- There are so many bugs. This is alpha version.
+![2](images/2.png)
 
-## Image Sources
+## References
 
-iOS image from Apple
+App Icon Image is from [Shadowreaper Anduin by Diego de Freitas](https://www.artstation.com/artwork/J5Bam).
