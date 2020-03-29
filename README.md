@@ -2,13 +2,9 @@
 
 Apple Mobile Device Update Assets Parser
 
-**In Progress**
-
 ## To Do
 
 - Load and Save catalogs
-
-- Description of update using WKWebView
 
 ## Screenshots
 
@@ -17,6 +13,8 @@ Apple Mobile Device Update Assets Parser
 ![1](images/1.png)
 
 ![2](images/2.png)
+
+![3](images/2.png)
 
 ## References
 
