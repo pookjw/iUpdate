@@ -14,7 +14,7 @@ Apple Mobile Device Update Assets Parser
 
 ![2](images/2.png)
 
-![3](images/2.png)
+![3](images/3.png)
 
 ## References
 
