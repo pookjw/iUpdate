@@ -23,7 +23,7 @@ class AddCatalogTableViewController: UITableViewController, UITextFieldDelegate 
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        self.updateSaveButtonState()
+        self.saveButton.isEnabled = false
     }
     
     // MARK: - Table view data source

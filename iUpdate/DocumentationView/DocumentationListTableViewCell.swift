@@ -1,24 +1,25 @@
 //
-//  ColorTintSettingsTableViewCell.swift
+//  DocumentationListTableViewCell.swift
 //  iUpdate
 //
-//  Created by pook on 3/28/20.
+//  Created by pook on 3/30/20.
 //  Copyright © 2020 pook. All rights reserved.
 //
 
 import UIKit
 
-class ColorTintSettingsTableViewCell: UITableViewCell {
+class DocumentationListTableViewCell: UITableViewCell {
     
     //MARK: Properties
-    @IBOutlet weak var colorImage: UIImageView!
-    @IBOutlet weak var colorName: UILabel!
-    @IBOutlet weak var checkImage: UIImageView!
+    @IBOutlet weak var documentationImage: UIImageView!
+    @IBOutlet weak var documentationID: UILabel!
+    @IBOutlet weak var device: UILabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

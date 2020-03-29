@@ -1,28 +1,27 @@
 //
-//  SettingsTableViewCell.swift
+//  DocumentationDetailCellTableViewCell.swift
 //  iUpdate
 //
-//  Created by pook on 3/28/20.
+//  Created by pook on 3/30/20.
 //  Copyright © 2020 pook. All rights reserved.
 //
 
 import UIKit
 
-class SettingsTableViewCell: UITableViewCell {
+class DocumentationDetailCellTableViewCell: UITableViewCell {
     
     //MARK: Properties
-    @IBOutlet weak var settingsImage: UIImageView!
-    @IBOutlet weak var settingsTitle: UILabel!
-    @IBOutlet weak var settingsDescription: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var value: UILabel!
     
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(true, animated: animated)
+        super.setSelected(false, animated: animated)
 
         // Configure the view for the selected state
     }

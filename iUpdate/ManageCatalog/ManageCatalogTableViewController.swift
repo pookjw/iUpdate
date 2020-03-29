@@ -48,7 +48,9 @@ class ManageCatalogTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ManageCatalogTableViewCell", for: indexPath) as! ManageCatalogTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ManageCatalogTableViewCell", for: indexPath) as? ManageCatalogTableViewCell else {
+            fatalError("The dequeued cell is not an instance of ManageCatalogTableViewCell.")
+        }
         
         // Configure the cell...
         let catalog = catalogs[indexPath.row]
@@ -111,7 +113,6 @@ class ManageCatalogTableViewController: UITableViewController {
      }
      */
     
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -119,7 +120,6 @@ class ManageCatalogTableViewController: UITableViewController {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
      }
-     */
     
     
     //MARK: Private Methods

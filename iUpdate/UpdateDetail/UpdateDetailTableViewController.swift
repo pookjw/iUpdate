@@ -12,22 +12,23 @@ class UpdateDetailTableViewController: UITableViewController {
     
     @IBAction func unwindToDetail(sender: UIStoryboardSegue) {
         /*if let sourceViewController = sender.source as? ManageCatalogTableViewController {
-            if let selected_catalog = sourceViewController.selected_catalog {
-                self.catalog = sourceViewController.catalogs[selected_catalog]
-                self.selected_catalog = selected_catalog
-                self.titleButton.setTitle(self.catalog!.name, for: .normal)
-                do{
-                    try self.update()
-                } catch {
-                    fatalError("\(error)")
-                }
-            }
-        }*/
+         if let selected_catalog = sourceViewController.selected_catalog {
+         self.catalog = sourceViewController.catalogs[selected_catalog]
+         self.selected_catalog = selected_catalog
+         self.titleButton.setTitle(self.catalog!.name, for: .normal)
+         do{
+         try self.update()
+         } catch {
+         fatalError("\(error)")
+         }
+         }
+         }*/
     }
     
     //MARK: Properties
     @IBOutlet weak var showUpdateDescriptionBtn: UIBarButtonItem!
     var asset: Asset? = nil
+    var documentation: Documentation? = nil
     var index: Int?
     
     override func viewDidLoad() {
@@ -39,7 +40,7 @@ class UpdateDetailTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.title = self.asset!.Assets[self.index!].SUDocumentationID
-        self.makeSettingsBtn()
+        self.setNavBarBtn()
     }
     
     // MARK: - Table view data source
@@ -51,13 +52,13 @@ class UpdateDetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 11
+        return 10
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "UpdateDetailTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UpdateDetailTableViewCell else {
-            fatalError("The dequeued cell is not an instance of ColorTintSettingsTableViewCell.")
+            fatalError("The dequeued cell is not an instance of UpdateDetailTableViewCell.")
         }
         
         let key = self.asset!.Assets[self.index!]
@@ -70,38 +71,35 @@ class UpdateDetailTableViewController: UITableViewController {
             cell.name.text = "OSVersion"
             cell.value.text = key.OSVersion
         case 2:
-            cell.name.text = "Build"
-            cell.value.text = key.Build
-        case 3:
             cell.name.text = "PrerequisiteBuild"
             if key.PrerequisiteOSVersion == nil {
                 cell.value.text = "(nil)"
             } else {
                 cell.value.text = key.PrerequisiteBuild
             }
-        case 4:
+        case 3:
             cell.name.text = "PrerequisiteOSVersion"
             if key.PrerequisiteOSVersion == nil {
                 cell.value.text = "(nil)"
             } else {
                 cell.value.text = key.PrerequisiteOSVersion
             }
-        case 5:
+        case 4:
             cell.name.text = "SUDocumentationID"
             cell.value.text = key.SUDocumentationID
-        case 6:
+        case 5:
             cell.name.text = "SupportedDeviceModels"
             cell.value.text = key.SupportedDeviceModels.joined(separator: ", ")
-        case 7:
+        case 6:
             cell.name.text = "SupportedDevices"
             cell.value.text = key.SupportedDevices.joined(separator: ", ")
-        case 8:
+        case 7:
             cell.name.text = "__BaseURL"
             cell.value.text = key.__BaseURL
-        case 9:
+        case 8:
             cell.name.text = "__RelativePath"
             cell.value.text = key.__RelativePath
-        case 10:
+        case 9:
             cell.name.text = "Full URL"
             cell.value.text = "\(key.__BaseURL)\(key.__RelativePath)"
         default:
@@ -121,26 +119,24 @@ class UpdateDetailTableViewController: UITableViewController {
         case 1:
             pasteboard.string = key.OSVersion
         case 2:
-            pasteboard.string = key.Build
-        case 3:
             if key.PrerequisiteOSVersion != nil {
                 pasteboard.string = key.PrerequisiteBuild
             }
-        case 4:
+        case 3:
             if key.PrerequisiteOSVersion != nil {
                 pasteboard.string = key.PrerequisiteOSVersion
             }
-        case 5:
+        case 4:
             pasteboard.string = key.SUDocumentationID
-        case 6:
+        case 5:
             pasteboard.string = key.SupportedDeviceModels.joined(separator: ", ")
-        case 7:
+        case 6:
             pasteboard.string = key.SupportedDevices.joined(separator: ", ")
-        case 8:
+        case 7:
             pasteboard.string = key.__BaseURL
-        case 9:
+        case 8:
             pasteboard.string = key.__RelativePath
-        case 10:
+        case 9:
             pasteboard.string = "\(key.__BaseURL)\(key.__RelativePath)"
         default:
             ()
@@ -182,19 +178,38 @@ class UpdateDetailTableViewController: UITableViewController {
      }
      */
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        switch segue.identifier ?? "" {
+        case "ShowUpdateDescription":
+            guard let destinationNavigationController = segue.destination as? UINavigationController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            let targetController = destinationNavigationController.topViewController as! DescriptionViewController
+            
+            let assets_key = self.asset!.Assets[self.index!]
+            targetController.documentation_id = assets_key.SUDocumentationID
+            
+            let _ = self.documentation!.Assets.map {
+                if $0.SUDocumentationID == assets_key.SUDocumentationID {
+                    targetController.documentation_url = "\($0.__BaseURL)\($0.__RelativePath)"
+                }
+            }
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
+    }
+    
     
     //MARK: Private Methods
     
-    private func makeSettingsBtn() {
+    private func setNavBarBtn() {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "info.circle"), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 25, height: 25)

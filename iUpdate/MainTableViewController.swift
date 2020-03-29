@@ -27,7 +27,7 @@ class MainTableViewController: UITableViewController {
     }
     
     //MARK: Properties
-    @IBOutlet weak var settingsButton: UIBarButtonItem!
+    @IBOutlet weak var documentationListButton: UIBarButtonItem!
     @IBOutlet weak var titleButton: UIButton!
     @IBAction func getData(_ sender: UIBarButtonItem) {
         do{
@@ -42,6 +42,7 @@ class MainTableViewController: UITableViewController {
     var catalog: Catalog?
     var selected_catalog: Int?
     var asset: Asset? = nil
+    var documentation: Documentation? = nil
     var all_indexPath = [IndexPath]()
     
     override func viewDidLoad() {
@@ -53,8 +54,7 @@ class MainTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.titleButton.setTitle("(nil)", for: .normal)
-        self.makeSettingsBtn()
-        
+        self.setDocumentationBtn()
     }
     
     // MARK: - Table view data source
@@ -82,7 +82,7 @@ class MainTableViewController: UITableViewController {
             ()
         } else {
             let key = self.asset!.Assets[indexPath.row]
-            cell.updateImage.image = UIImage(systemName: "archivebox")
+            cell.updateImage.image = UIImage(systemName: "gear")
             cell.updateName.text = "\(key.SupportedDevices.joined(separator: ""))_\(key.OSVersion)_\(key.Build)"
             cell.documentationID.text = key.SUDocumentationID
         }
@@ -152,9 +152,16 @@ class MainTableViewController: UITableViewController {
                 fatalError("The selected cell is not being displayed by the table")
             }
             destinationNavigationController.asset = self.asset
+            destinationNavigationController.documentation = self.documentation
             destinationNavigationController.index = indexPath.row
         case "ShowSettings":
             ()
+        case "ShowDocumentationList":
+            guard let destinationNavigationController = segue.destination as? UINavigationController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            let targetController = destinationNavigationController.topViewController as! DocumentationListTableViewController
+            targetController.documentation = self.documentation
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
@@ -162,16 +169,18 @@ class MainTableViewController: UITableViewController {
     
     //MARK: Private Methods
     private func update() throws {
+        let decoder = PropertyListDecoder()
+        
+        // Get Asset data
         if self.asset != nil {
             self.asset = nil
             tableView.deleteRows(at: all_indexPath, with: .fade)
             self.all_indexPath = []
         }
         
-        let url = URL(string: self.catalog!.assets_url)!
-        let data: Data = try Data(contentsOf: url)
-        let decoder = PropertyListDecoder()
-        self.asset = try decoder.decode(Asset.self, from: data)
+        let assets_url = URL(string: self.catalog!.assets_url)!
+        let assets_data: Data = try Data(contentsOf: assets_url)
+        self.asset = try decoder.decode(Asset.self, from: assets_data)
         
         for tmp in 0..<self.asset!.Assets.count {
             let newIndexPath = IndexPath(row: tmp, section: 0)
@@ -179,18 +188,24 @@ class MainTableViewController: UITableViewController {
         }
         
         tableView.insertRows(at: all_indexPath, with: .fade)
+        
+        // Get Documentation data
+        self.documentation = nil
+        let documentation_url = URL(string: self.catalog!.documentation_url)!
+        let documentation_data: Data = try Data(contentsOf: documentation_url)
+        self.documentation = try decoder.decode(Documentation.self, from: documentation_data)
     }
     
-    private func makeSettingsBtn() {
+    private func setDocumentationBtn() {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(systemName: "gear"), for: .normal)
+        button.setImage(UIImage(systemName: "doc.text"), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
         button.widthAnchor.constraint(equalToConstant: 25).isActive = true
         button.heightAnchor.constraint(equalToConstant: 25).isActive = true
         
-        button.addTarget(self, action: #selector(self.settingsBtnClick(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(self.documentationBtnClick(_:)), for: .touchUpInside)
         
-        self.settingsButton.customView = button
+        self.documentationListButton.customView = button
         
         /*
          let barButton = UIBarButtonItem(customView: button)
@@ -198,7 +213,7 @@ class MainTableViewController: UITableViewController {
          */
     }
     
-    @objc private func settingsBtnClick(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "ShowSettings", sender: self)
+    @objc private func documentationBtnClick(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "ShowDocumentationList", sender: self)
     }
 }

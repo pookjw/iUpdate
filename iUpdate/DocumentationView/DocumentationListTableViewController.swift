@@ -1,24 +1,19 @@
 //
-//  ColorTintSettingsTableViewController.swift
+//  DocumentationListTableViewController.swift
 //  iUpdate
 //
-//  Created by pook on 3/28/20.
+//  Created by pook on 3/30/20.
 //  Copyright © 2020 pook. All rights reserved.
 //
 
 import UIKit
 
-class ColorTintSettingsTableViewController: UITableViewController {
-
-    //MARK: Properties
-    var cells = [UITableViewCell]()
-    var colors: [UIImage] = [
-        UIImage.circle(diameter: 40.0, color: UIColor.blue)
-    ]
-    var labels: [String] = [
-        "Blue"
-    ]
+class DocumentationListTableViewController: UITableViewController {
     
+    //MARK: Properties
+    var documentation: Documentation? = nil
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,22 +33,25 @@ class ColorTintSettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return colors.count
+        if self.documentation == nil {
+            return 0
+        }
+        return self.documentation!.Assets.count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "ColorTintSettingsTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ColorTintSettingsTableViewCell else {
-            fatalError("The dequeued cell is not an instance of ColorTintSettingsTableViewCell.")
+        let cellIdentifier = "DocumentationListTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DocumentationListTableViewCell else {
+            fatalError("The dequeued cell is not an instance of DocumentationListTableViewCell.")
         }
         
-        cell.colorImage.image = self.colors[indexPath.row]
-        cell.colorName.text = self.labels[indexPath.row]
+        cell.documentationImage.image = UIImage(systemName: "doc.text")
+        cell.documentationID.text = self.documentation!.Assets[indexPath.row].SUDocumentationID
+        cell.device.text = self.documentation!.Assets[indexPath.row].Device
+
+        // Configure the cell...
 
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 
     /*
@@ -91,14 +89,31 @@ class ColorTintSettingsTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        switch segue.identifier ?? "" {
+        case "ShowDocumentationDetail":
+           guard let destinationNavigationController = segue.destination as? DocumentationDetailTableViewController else {
+               fatalError("Unexpected destination: \(segue.destination)")
+           }
+           guard let selectedUpdate = sender as? DocumentationListTableViewCell else {
+               fatalError("Unexpected sender: \(sender)")
+           }
+           guard let indexPath = tableView.indexPath(for: selectedUpdate) else {
+               fatalError("The selected cell is not being displayed by the table")
+           }
+           destinationNavigationController.documentation = self.documentation
+           destinationNavigationController.index = indexPath.row
+        default:
+            ()
+            //fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
+        
     }
-    */
 
 }
